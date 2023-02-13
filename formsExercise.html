@@ -5,77 +5,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Forms Exercise Assignment">
+    <meta name="author" content="J.Keeley">
     <title>FormsExercise</title>
 </head>
 <body>
-<fieldset>
-    <legend>Customer Experience Survey</legend>
-     <form>
-        <label for="storeNumber">Store Number</label>
-        <select name="storeNumber" id="storeNumber">
-            <option hidden>Select Store</option>
-            <option value="2421">2421</option>
-            <option value="3109">3109</option>
-            <option value="5357">5357</option>
-        </select>
-    <br>  
-    <form>
+<form>
+    <fieldset>
+        <legend>Customer Experience Survey</legend>
+            <label for="storeNumber">Store Number</label>
+            <select name="storeNumber" id="storeNumber">
+                <option hidden>Select Store</option>
+                    <!-- Bonus 1: Hidden Option -->
+                <option hidden>Select Store</option>
+                <option value="2421">2421</option>
+                <option value="3109">3109</option>
+                <option value="5357">5357</option>
+            </select> 
         <fieldset>
-            <legend>When you visited:</legend>
-            <label for="dateVisited">Date Visited</label><br>
-        <input type="date" id="Date Visited" value="2022-03-01"><br>
-            <label for="dateTime">Time</label>
-            <input type="time" name="" id="">
-        </fieldset>
-        <form>
-            <label for="fullName">Full Name:</label>
-            <input type="text" id="fullName">
-            <br>
-            <label for="userEmail">Email</label>
-            <input type="email" id="userEmail" required>
-    </form>
-    <form>
-        <fieldset>
-            <legend>How would you rate your level of satisfaction with your visit?</legend>
-            <input type="radio" id="Satisfied" name="radioLink">
-            <label for="Satisfied">Satisfied</label>
-            <br>
-            <input type="radio" id="neitherSatisfiedNorDissatisfied" name="radioLink">
-            <label for="neitherSatisfiedNorDissatisfied">Neither Satisfied Nor Dissatisfied</label>
-            <br>
-            <input type="radio" id="Dissatisfied" name="radioLink">
-            <label for="Dissatisfied">Dissatisfied</label> <br>
-        </fieldset>
-            <label for="response">Tell us about your experience</label>
-            <br>
-            <textarea name="response" id="response" cols="20" rows="2" placeholder="Response"></textarea> 
-    </form>
-    <form>
-        <label for="visits">Times visited last month:</label>
-        <select name="visits" id="visits">
-            <option hidden>Select</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
-    </form>
-    <form>
-        <input type="checkbox" id="agree">
-        <label for="agree">Please check this box if you would be willing to be contacted about your experience.</label>
-        <br>
-        <label for="Password">Create a Password:</label>
-        <input type="password" name="password" placeholder="">
-    </form>
-    <input type="submit" value="Submit">
-</fieldset>
+                <legend>When you visited:</legend>
+            <div>
+                <label for="dateVisited">Date Visited</label>
+                <!-- Bonus 2: Date Parameters -->
+                <input type="date" name="dateVisited" id="dateVisited" value="2022-03-01" min="2022-02-09" max="2023-02-09">
+            </div>
 
+            <div>
+                <label for="timeVisted">Time</label>
+                <input type="time" name="timeVisited" id="timeVisted" value="12:30">
+            </div> 
+
+        </fieldset>
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName">
+                <br>
+                <label for="userEmail">Email</label>
+                <input type="email" id="userEmail" required>
     
+                <fieldset>
+                    <legend>How would you rate your level of satisfaction with your visit?</legend>
+                    <input type="radio" name="radioLink" id="one">
+                    <label for="Satisfied">Satisfied</label>
+                    <br>
+                    <!-- Bonus 3: Checked -->
+                    <input type="radio" name="radioLink" id="two" checked>
+                    <label for="neitherSatisfiedNorDissatisfied">Neither Satisfied Nor Dissatisfied</label>
+                    <br>
+                    <input type="radio" name="radioLink" id="three">
+                    <label for="Dissatisfied">Dissatisfied</label>
+                </fieldset>
+            
+            <label for="experience">Tell us about your experience</label>
+            <br>
+            <textarea name="experience" id="experience" cols="20" rows="2" 
+            placeholder="Response"></textarea> 
+
+            <br>
+            <label for="visits">Times visited last month:</label>
+            <br>
+            <!-- Bonus 4 Min and Max Visits-->
+            <input type="number" name="times" id="times" min="1" max="30">
+            <br>
+            <!-- Bonus 5 -->
+            <input type="checkbox" name="contact" id="contact" required>
+            <label for="agree">Please check this box if you would be willing to be contacted about your experience.</label>
+            <br>
+            <label for="Password">Create a Password:</label>
+            <!-- Bonus 6/7: min and max length -->
+            <input type="password" name="password" id="password" pattern="(.{5,10})" 
+            title="Please enter password that is 5 to 10 characters">
+            <br>
+            <!-- Bonus 7 (technically 8) -->
+            <input type="reset" value="Reset the Form">
+            <input type="submit" value="Submit">
+    </fieldset>
+</form>
+
+
 </body>
 </html>
